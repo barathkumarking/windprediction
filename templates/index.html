@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html >
+<!--"
+Event:IBM Hack challenge 2020
+@team members: Barathkumar G  id:191cs138
+               Ajay S         id:191cs110
+               Dhanush s      id:191cs156
+Guide name: Ms Malathi T AP/CSE
+Mentor name : Mr Hemant Kumar Gahlot   AI Developer/IBM
+              Ms Gayatri   AI Developer/IBM
+"""-->
+<head>
+<style>
+body{
+
+background-image: url({{ url_for('static', filename='css/download.jpg') }})
+
+
+}
+#searchBox {
+  color: white;
+ 
+  margin-center: 5px;
+  padding: 5px;
+}
+
+#searchBox input {
+  font-size: 25%;
+  width: 50px;
+}
+</style>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body style="background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%;">
+ 
+<div style="background-color:purple;font-size:30px;color:white;" ><center>	<h2 style="border:outset;font-family:Merriweather;">WIND ENERGY PREDICTOR</h2>
+</div>	<center>
+	<I><h3>The power should be higher than 2.25 MW to satisfy the company's need</h3></I></center>
+	
+<div style="opacity:1;font-size:20px;text-align:right;" >
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post","get">
+ <right>  <B> <h3> ENTER WIND SPEED: <input style="font-size:20px;color:black" id="searchBox" type="text" width="48" height="48" name="windspeed" placeholder="enter Windspeed in m/s" required="required" ></b>
+ </h3>   	
+    	<B><h3> SELECT THE WIND BLOW DIRECTION: 
+  <select type="text" name="wind direction" required="required" id="searchBox" style="font-size:18px;color:black">
+ <h5> <option value="east">EAST</option>
+  <option value="west">WEST</option>
+  <option value="north">NORTH</option>
+  <option value="south">SOUTH</option>
+   <option value="northeast">NORTHEAST</option>
+  <option value="northwest">NORTHWEST</option>
+  <option value="southeast">SOUTHEAST</option>
+  <option value="southwest">SOUTHWEST</option><h5></h3></B>
+</select>
+<br><br>		
+
+     <center>   <button type="submit" style="font-size:23px;color:black;margin-left:65%;" class="btn btn-primary btn-block btn-large">Predict</button></center>
+    
+
+  
+   <br><br>
+RESULT 1: <textarea id="w3review" name="w3review" rows="2" cols="30" align="left" style="color:green;font-size:25px;">{{ prediction_text }}</textarea></left>
+<br>
+RESULT 2: <textarea id="w3review" name="w3review" rows="2" cols="30" align="left" style="color:Blue;font-size:25px;">{{ a }}</textarea></left>
+</form>
+</right>
+ </div>
+
+
+</body>
+</html>
