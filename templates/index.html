@@ -47,7 +47,7 @@ background-image: url({{ url_for('static', filename='css/download.jpg') }})
 	
 <div style="opacity:1;font-size:20px;text-align:right;" >
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post","get">
+    <form action="{{ url_for('predict')}}"method="post">
  <right>  <B> <h3> ENTER WIND SPEED: <input style="font-size:20px;color:black" id="searchBox" type="text" width="48" height="48" name="windspeed" placeholder="enter Windspeed in m/s" required="required" ></b>
  </h3>   	
     	<B><h3> SELECT THE WIND BLOW DIRECTION: 
